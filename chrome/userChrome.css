@@ -1,0 +1,124 @@
+/* Use consistent rounded corners across Firefox chrome UI. */
+:root {
+  --panel-border-radius: 8px !important;
+  --arrowpanel-border-radius: 8px !important;
+  --toolbarbutton-border-radius: 8px !important;
+  --urlbar-icon-border-radius: 8px !important;
+}
+
+menupopup,
+panel,
+panelview,
+#appMenu-popup,
+#appMenu-mainView,
+#appMenu-mainView > .panel-subview-body,
+#appMenu-multiView,
+#customizationui-widget-panel {
+  --panel-border-radius: 8px !important;
+  border-radius: 8px !important;
+}
+
+#urlbar-background,
+#searchbar,
+.urlbarView,
+.panel-arrowcontent,
+.menupopup-arrowscrollbox {
+  border-radius: 8px !important;
+}
+
+#nav-bar toolbarbutton,
+#nav-bar .toolbaritem-combined-buttons > toolbarbutton,
+#TabsToolbar .toolbarbutton-1,
+#PersonalToolbar toolbarbutton {
+  border-radius: 8px !important;
+}
+
+/* Hide the bookmark star beside the address bar */
+#star-button-box {
+  display: none !important;
+}
+
+/***** Tabs *****/
+
+#tabbrowser-tabs {
+  --user-tab-rounding: 8px;
+}
+
+.tab-background {
+  border-radius: var(--user-tab-rounding) !important;
+}
+
+/* Keep the site favicon visible instead of Firefox's loading throbber. */
+.tab-throbber[busy] {
+  display: none !important;
+}
+
+.tabbrowser-tab[busy] .tab-icon-image {
+  display: -moz-box !important;
+}
+
+/* Remove the empty space before the first tab */
+#TabsToolbar .titlebar-spacer[type="pre-tabs"] {
+  display: none !important;
+}
+
+/* Darken the main chrome surfaces without changing text colors. */
+#nav-bar,
+#PersonalToolbar,
+#TabsToolbar,
+#urlbar-background,
+#searchbar {
+  background-color: color-mix(in srgb, var(--toolbar-bgcolor, #35313b) 72%, black) !important;
+}
+
+/***** Loading tab outline *****/
+
+@property --nova-loading-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 90deg;
+}
+
+@keyframes nova-loading-orbit {
+  from {
+    --nova-loading-angle: 90deg;
+  }
+  to {
+    --nova-loading-angle: 450deg;
+  }
+}
+
+:root[theme-in-app] #tabbrowser-tabs[orient="horizontal"] .tabbrowser-tab[busy]:not([multiselected]) > .tab-stack > .tab-background::after {
+  content: "";
+  position: absolute;
+  --user-tab-border: 1.5px;
+  inset:
+    var(--tab-margin-block)
+    calc(var(--user-tab-border) - 3px);
+  border: 1.5px solid transparent;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      var(--tab-background-color-selected),
+      var(--tab-background-color-selected)
+    ) padding-box,
+    conic-gradient(
+      from var(--nova-loading-angle),
+      transparent 0deg 292deg,
+      color-mix(in srgb, var(--tab-border-color-selected-leading) 62%, black) 310deg,
+      color-mix(in srgb, white 62%, black) 326deg,
+      color-mix(in srgb, var(--tab-border-color-selected-trailing) 62%, black) 342deg,
+      transparent 360deg
+    ) border-box;
+  opacity: .85;
+  filter: blur(.5px);
+  animation: nova-loading-orbit 1.8s linear infinite;
+}
+
+/* Hide the selected tab's static border while preserving its loading orbit. */
+:root[theme-in-app] #tabbrowser-tabs[orient="horizontal"] .tabbrowser-tab[selected][busy]:not([multiselected]) > .tab-stack > .tab-background {
+  --tab-border-color-accent: transparent !important;
+  border-color: transparent !important;
+}
+
