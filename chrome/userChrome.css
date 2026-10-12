@@ -33,11 +33,6 @@ panelview,
   border-radius: 8px !important;
 }
 
-/* Hide the bookmark star beside the address bar */
-#star-button-box {
-  display: none !important;
-}
-
 /***** Tabs *****/
 
 #tabbrowser-tabs {
