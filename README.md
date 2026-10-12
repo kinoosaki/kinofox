@@ -11,5 +11,3 @@ my firefox user.js and userChrome.css config
 - darkens surfaces while still keeping the colors of nova
 
 lastly, i did not make this entirely. this was done mostly by codex with some editing and an overview from my end. i know css and js a bit, but not much.
-
-<img width="1920" height="1048" alt="image" src="https://github.com/user-attachments/assets/75598c89-43b2-4293-bdd8-04e82b7a8fec" />
