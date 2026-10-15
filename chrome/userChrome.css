@@ -1,4 +1,4 @@
-/* Use consistent rounded corners across Firefox chrome UI. */
+/* Use 8px rounded corners across Firefox UI. */
 :root {
   --panel-border-radius: 8px !important;
   --arrowpanel-border-radius: 8px !important;
@@ -32,8 +32,6 @@ panelview,
 #PersonalToolbar toolbarbutton {
   border-radius: 8px !important;
 }
-
-/***** Tabs *****/
 
 #tabbrowser-tabs {
   --user-tab-rounding: 8px;
