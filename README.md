@@ -9,5 +9,8 @@ my firefox user.js and userChrome.css config
 # userChrome.css
 - 8px rounding across most of the Firefox UI (closer to Proton)
 - darkens surfaces while still keeping the colors of nova
+- this was made for the default nova theme in mind
 
 lastly, i did not make this entirely. this was done mostly by codex with some editing and an overview from my end. i know css and js a bit, but not much.
+
+tested on firefox developer edition 159.0b4
