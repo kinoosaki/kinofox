@@ -40,12 +40,3 @@ panelview,
 .tab-background {
   border-radius: var(--user-tab-rounding) !important;
 }
-
-/* Darken the main chrome surfaces without changing text colors. */
-#nav-bar,
-#PersonalToolbar,
-#TabsToolbar,
-#urlbar-background,
-#searchbar {
-  background-color: color-mix(in srgb, var(--toolbar-bgcolor, #35313b) 72%, black) !important;
-}
