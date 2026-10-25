@@ -11,4 +11,4 @@ my firefox user.js and userChrome.css config
 
 lastly, i did not make this entirely. this was done mostly by codex with some editing and an overview from my end. i know css and js a bit, but not much.
 
-tested on firefox developer edition 159.0b5
+tested on firefox nightly 161
